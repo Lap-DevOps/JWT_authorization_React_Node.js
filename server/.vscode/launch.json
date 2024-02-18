@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug Node.js with nodemon",
+        "runtimeExecutable": "nodemon",
+        "runtimeArgs": ["--inspect-brk", "index.js"],
+        "restart": true,
+        "port": 9229,
+        "console": "integratedTerminal"
+      }
+    ]
+  }
+  

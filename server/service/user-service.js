@@ -6,6 +6,7 @@ const uuid = require("uuid");
 const mailService = require("./mail-service");
 
 const tokenService = require("./token-service");
+const UserDto = require("../dtos/user-dto");
 
 class UserService {
 
@@ -20,10 +21,14 @@ class UserService {
 
         await mailService.sendActivationMail(email, `${process.env.API_URL}/api/activate/${activationLink}`);
 
-        const tokens = tokenService.generateTokens({email});
-        await tokenService.saveToken(user._id, user.refreshToken);
+        const userDto = new UserDto(user); // id, email, isActivated
+        const tokens = tokenService.generateTokens({ ...userDto });
+        await tokenService.saveToken(userDto.id, tokens.refreshToken);
 
-        return user
+        return {
+            ...tokens,
+            user: userDto
+        }
     }
 
 
