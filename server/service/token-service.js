@@ -12,13 +12,13 @@ class TokenService{
             refreshToken
         }
     }
-    async saveToken(userId, refreshToken) {
+    async saveToken(userId, refreshToken,ip) {
         const tokenData = await tokenModel.findOne({user: userId});
         if (tokenData) {
             tokenData.refreshToken = refreshToken;
             return tokenData.save();
         }
-        const token = await tokenModel.create({user: userId, refreshToken: refreshToken});
+        const token = await tokenModel.create({user: userId, refreshToken: refreshToken, address: ip});
         return token;
     }
     

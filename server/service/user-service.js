@@ -10,7 +10,7 @@ const UserDto = require("../dtos/user-dto");
 
 class UserService {
 
-    async registration(email, password) {
+    async registration(email, password, ip) {
         const candidate = await UserModel.findOne({ email });
         if (candidate) {
             throw new Error(`User with email ${email} already exists`)
@@ -23,7 +23,7 @@ class UserService {
 
         const userDto = new UserDto(user); // id, email, isActivated
         const tokens = tokenService.generateTokens({ ...userDto });
-        await tokenService.saveToken(userDto.id, tokens.refreshToken);
+        await tokenService.saveToken(userDto.id, tokens.refreshToken, ip);
 
         return {
             ...tokens,
