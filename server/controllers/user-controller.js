@@ -3,6 +3,7 @@ const requestIp = require('request-ip');
 const {validationResult} = require("express-validator");
 const ApiError = require("../exeptions/api-error");
 
+
 class UserController {
   async registration(req, res, next) {
     try {
@@ -77,16 +78,8 @@ class UserController {
 
   async getUsers(req, res, next) {
     try {
-      res.json([
-        {
-          id: 1,
-          name: "Alex",
-        },
-        {
-          id: 2,
-          name: "Vasya",
-        },
-      ]);
+      const users = await userService.getAllUsers();
+      return res.json(users);
     } catch (e) {
       next(e);
     }
