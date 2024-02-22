@@ -8,6 +8,18 @@
       "cwd": "${workspaceFolder}/server",
       "skipFiles": ["<node_internals>/**"],
       "type": "node"
-    }
+    },
+
+    {
+      "name": "Client",
+      "request": "launch",
+      "runtimeArgs": [ "start"],
+      "runtimeExecutable": "npm",
+      "cwd": "${workspaceFolder}/client",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+
+
   ]
 }
