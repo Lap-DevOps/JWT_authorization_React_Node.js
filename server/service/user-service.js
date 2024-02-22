@@ -31,10 +31,16 @@ class UserService {
         }
     }
 
+    async activate(activationLink) {
+        const user = await UserModel.findOne({ activationLink });
+        if (!user) {
+            throw new Error("User not found")
+        }
+        user.isActivated = true;
+        await user.save();
 
 
-
-}
+}}
 
 
 
