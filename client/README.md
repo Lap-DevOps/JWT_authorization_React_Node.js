@@ -1,46 +1,74 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# JWT Authentication Example
 
-## Available Scripts
+This project demonstrates how to implement JSON Web Token (JWT) authentication in a React application with a Node.js backend. The main goal of the project is to showcase the usage of JWT tokens for user authentication and authorization.
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup Instructions](#setup-instructions)
+- [API Endpoints](#api-endpoints)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Project Overview
 
-### `npm test`
+This project demonstrates how to implement JSON Web Token (JWT) authentication in a React application with a Node.js backend. The main goal of the project is to showcase the usage of JWT tokens for user authentication and authorization.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- User registration with email verification
+- User login with JWT token generation
+- Protected routes requiring authentication
+- Logout functionality
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React for the frontend
+- Node.js with Express for the backend
+- MongoDB for database storage
+- JSON Web Tokens (JWT) for authentication
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup Instructions
 
-### `npm run eject`
+1. Clone the repository: `git clone https://github.com/Lap-DevOps/JWT_authorization_React_Node.js.git`
+2. Navigate to the project directory: `cd your_repository`
+3. Install dependencies: `npm install`
+4. Start the server: `npm start`
+5. Navigate to the client directory: `cd client`
+6. Install client dependencies: `npm install`
+7. Start the client: `npm start`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## API Endpoints
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `GET /api/users`: Retrieve a list of users.
+- `POST /api/register`: Register a new user.
+- `POST /api/login`: Login an existing user.
+- `GET /api/logout`: Logout the current user.
+- `POST /api/confirm-email`: Confirm user's email address.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Register a new user using the `/api/register` endpoint.
+2. Login using the `/api/login` endpoint to obtain a JWT token.
+3. Use the obtained JWT token to access protected routes or perform authenticated actions.
+4. Logout using the `/api/logout` endpoint when finished.
+5. Confirm user's email address using the `/api/confirm-email` endpoint.
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you would like to contribute to this project, you can follow these steps:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix: `git checkout -b feature-name`
+3. Make changes and commit: `git commit -m 'Add new feature'`
+4. Push to the branch: `git push origin feature-name`
+5. Submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
